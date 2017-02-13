@@ -1,0 +1,4 @@
+﻿  Source.cpp
+c:\users\christofer\documents\visual studio 2015\projects\adv._c++_uppg\string\string.h(41): warning C4018: '<': signed/unsigned mismatch
+  String.vcxproj -> C:\Users\Christofer\documents\visual studio 2015\Projects\Adv._c++_uppg\Debug\String.exe
+  String.vcxproj -> C:\Users\Christofer\documents\visual studio 2015\Projects\Adv._c++_uppg\Debug\String.pdb (Partial PDB)

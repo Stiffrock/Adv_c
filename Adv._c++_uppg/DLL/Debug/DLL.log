@@ -1,0 +1,32 @@
+﻿  Source.cpp
+c:\users\christofer\documents\visual studio 2015\projects\adv._c++_uppg\dll\link.h(93): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+  c:\users\christofer\documents\visual studio 2015\projects\adv._c++_uppg\dll\link.h(84): note: see reference to function template instantiation 'const T *Link<T>::FindNext<int>(const X &) const' being compiled
+          with
+          [
+              T=Node2,
+              X=int
+          ]
+  c:\users\christofer\documents\visual studio 2015\projects\adv._c++_uppg\dll\link.h(84): note: see reference to function template instantiation 'const T *Link<T>::FindNext<int>(const X &) const' being compiled
+          with
+          [
+              T=Node2,
+              X=int
+          ]
+  c:\users\christofer\documents\visual studio 2015\projects\adv._c++_uppg\dll\source.cpp(49): note: see reference to function template instantiation 'T *Link<T>::FindNext<int>(X)' being compiled
+          with
+          [
+              T=Node2,
+              X=int
+          ]
+  c:\users\christofer\documents\visual studio 2015\projects\adv._c++_uppg\dll\source.cpp(49): note: see reference to function template instantiation 'T *Link<T>::FindNext<int>(X)' being compiled
+          with
+          [
+              T=Node2,
+              X=int
+          ]
+  Node.cpp
+  List.cpp
+  Link.cpp
+  Generating Code...
+  DLL.vcxproj -> C:\Users\Christofer\documents\visual studio 2015\Projects\Adv._c++_uppg\Debug\DLL.exe
+  DLL.vcxproj -> C:\Users\Christofer\documents\visual studio 2015\Projects\Adv._c++_uppg\Debug\DLL.pdb (Partial PDB)
