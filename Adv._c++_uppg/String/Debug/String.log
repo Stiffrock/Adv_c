@@ -1,4 +1,21 @@
-﻿  Source.cpp
-c:\users\christofer\documents\visual studio 2015\projects\adv._c++_uppg\string\string.h(41): warning C4018: '<': signed/unsigned mismatch
-  String.vcxproj -> C:\Users\Christofer\documents\visual studio 2015\Projects\Adv._c++_uppg\Debug\String.exe
-  String.vcxproj -> C:\Users\Christofer\documents\visual studio 2015\Projects\Adv._c++_uppg\Debug\String.pdb (Partial PDB)
+﻿Build started 2017-02-13 21:40:35.
+     1>Project "C:\Users\chris_000\Documents\GitHub\Adv_c\Adv._c++_uppg\String\String.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp String.cpp
+         String.cpp
+     1>c:\users\chris_000\documents\github\adv_c\adv._c++_uppg\string\string.h(55): warning C4018: '<': signed/unsigned mismatch
+     1>c:\users\chris_000\documents\github\adv_c\adv._c++_uppg\string\string.cpp(64): warning C4018: '<': signed/unsigned mismatch
+     1>c:\users\chris_000\documents\github\adv_c\adv._c++_uppg\string\string.cpp(93): warning C4018: '<': signed/unsigned mismatch
+         Source.cpp
+     1>c:\users\chris_000\documents\github\adv_c\adv._c++_uppg\string\string.h(55): warning C4018: '<': signed/unsigned mismatch
+         Generating Code...
+     1>c:\users\chris_000\documents\github\adv_c\adv._c++_uppg\string\string.cpp(75): warning C4715: 'String::at': not all control paths return a value
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\chris_000\Documents\GitHub\Adv_c\Adv._c++_uppg\Debug\String.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG:FASTLINK /PDB:"C:\Users\chris_000\Documents\GitHub\Adv_c\Adv._c++_uppg\Debug\String.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\chris_000\Documents\GitHub\Adv_c\Adv._c++_uppg\Debug\String.lib" /MACHINE:X86 Debug\Source.obj
+         Debug\String.obj
+         String.vcxproj -> C:\Users\chris_000\Documents\GitHub\Adv_c\Adv._c++_uppg\Debug\String.exe
+     1>Done Building Project "C:\Users\chris_000\Documents\GitHub\Adv_c\Adv._c++_uppg\String\String.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:03.68

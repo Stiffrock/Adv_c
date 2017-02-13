@@ -30,21 +30,21 @@ public:
 	
 	
 
-	String& operator+=(const String& rhs) // tolkas som konkatenering
-	{
-		int oldLength = length;
-		int addLength = rhs.length + 1;
+	//String& operator+=(const String& rhs) // tolkas som konkatenering
+	//{
+	//	int oldLength = length;
+	//	int addLength = rhs.length + 1;
 
-		reserve(addLength);
-		for (int i = 0; i < rhs.length + 1; i++)
-		{
-			data[(oldLength - 1) + i] = rhs[i];
-		}
-		data[length - 1] = '\0';
+	//	reserve(addLength);
+	//	for (int i = 0; i < rhs.length + 1; i++)
+	//	{
+	//		data[(oldLength - 1) + i] = rhs[i];
+	//	}
+	//	data[length - 1] = '\0';
 
-		return *this;
+	//	return *this;
 
-	}
+	//}
 
 	String& operator+ (const char* cstr)
 	{
