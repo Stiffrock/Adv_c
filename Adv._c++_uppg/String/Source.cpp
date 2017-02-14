@@ -121,8 +121,12 @@ int main()
 	//char x = str2.at(4);
 	str + " då";
 	//str.reserve(5);
-	int c = 0;
+
+	str.resize(10);
+	//str.shrink_to_fit();
 
 	//TestUnsigned();
 	//TestFörGodkäntString();
+	int c = 0;
+
 }

@@ -75,6 +75,9 @@ void TestDLL() {
 	assert(myList.PopFirst() == nullptr);
 	cout << myList << "end";
 	assert(myList.Check());
+
+
+
 	cin.get();
 }
 
@@ -83,6 +86,13 @@ int main()
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 
 	List<Node<float>> list;
+	const List<Node<float>>* list2 = &list;
+	 
+	
+
+	//list2->InsertLast(new Node<float>(1));	
+	//const Node<float>* nodex = list2->FindNext(1);
+
 
 	Node<float>* newNode = new Node<float>(1);
 	Node<float>* newNode2 = new Node<float>(2);

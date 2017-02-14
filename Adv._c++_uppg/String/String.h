@@ -30,7 +30,7 @@ public:
 	
 	
 
-	//String& operator+=(const String& rhs) // tolkas som konkatenering
+	String& operator+=(const String& rhs); // tolkas som konkatenering
 	//{
 	//	int oldLength = length;
 	//	int addLength = rhs.length + 1;
@@ -73,7 +73,6 @@ public:
 	}
 
 
-	//char& operator[](size_t i); //indexerar utan range chck
 	friend bool operator==(const String& lhs, const String& rhs)
 	{		
 		if (lhs.length == rhs.length)
@@ -128,6 +127,10 @@ public:
 	}
 
 	char& String::operator[](size_t i)
+	{
+		return *(data + i);
+	}
+	const char& String::operator[](size_t i) const
 	{
 		return *(data + i);
 	}
