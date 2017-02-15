@@ -9,21 +9,21 @@ String::String()
 {
 	last = nullptr;
 	length = 1;
-	data = new char[length];
-	data[length - 1] = '\0'; //inte säker på detta, den ska vara null terminated men är inte length +1 redan null..?
+	sdata = new char[length];
+	sdata[length - 1] = '\0'; //inte säker på detta, den ska vara null terminated men är inte length +1 redan null..?
 }
 
 //Tar en sträng input och skapar en String utav det.
 String::String(const char* cstr)
 {
 	length = strlen(cstr) + 1;
-	data = new char[length];
+	sdata = new char[length];
 
 	for (int i = 0; i < length; i++)
 	{
-		data[i] = cstr[i];
+		sdata[i] = cstr[i];
 	}
-	data[length - 1] = '\0';
+	sdata[length - 1] = '\0';
 }
 
 //Copy constructor, skapar en ny char array med samma längd som förra
@@ -31,17 +31,17 @@ String::String(const char* cstr)
 String::String(const String& rhs)
 {
 	length = rhs.length;
-	data = new char[length];
+	sdata = new char[length];
 	for (int i = 0; i < length - 1; i++)
 	{
-		data[i] = rhs.data[i];
+		sdata[i] = rhs.sdata[i];
 	}
-	data[length - 1] = '\0';
+	sdata[length - 1] = '\0';
 }
 
 String::~String()
 {
-	delete[] data;
+	delete[] sdata;
 }
 
 
@@ -50,7 +50,7 @@ int String::size() const
 {
 	int i = 0;
 	
-	while (data[i] != '\0') //Har för mig han kommenterade detta, och att det inte var rätt sätt, kanske använda begin och end istället, men hur?
+	while (sdata[i] != '\0') //Har för mig han kommenterade detta, och att det inte var rätt sätt, kanske använda begin och end istället, men hur?
 	{
 		i++;
 	}
@@ -63,12 +63,12 @@ char& String::at(size_t i) //indexerar med range check
 	{		
 		if ((int)i - 1 < length)
 		{
-			return data[i - 1];
+			return sdata[i - 1];
 		}
 	}
 	catch (const std::exception&) // index out of range
 	{
-		return data[0];
+		return sdata[0];
 	}
 	
 
@@ -83,18 +83,43 @@ String& String::operator+=(const String& rhs)
 	reserve(addLength);
 	for (int i = 0; i < rhs.length + 1; i++)
 	{
-		data[(oldLength - 1) + i] = rhs[i];
+		sdata[(oldLength - 1) + i] = rhs[i];
 	}
-	data[length - 1] = '\0';
+	sdata[length - 1] = '\0';
 
 	return *this;
 }
 
-
-
-const char* String::Data() const 
+String& String::operator+ (const char* cstr)
 {
-	return data;
+	int oldLength = length;
+	int addLength = strlen(cstr) + 1;
+
+	reserve(addLength);
+	for (int i = 0; i < strlen(cstr) + 1; i++)
+	{
+		sdata[(oldLength - 1) + i] = cstr[i];
+	}
+	sdata[length - 1] = '\0';
+	return *this;
+}
+
+String& String::operator=(const String& rhs)
+{
+	length = rhs.length;
+	delete[] sdata;
+	//data = new char[length];
+	for (int i = 0; i < length; i++)
+	{
+		sdata[i] = rhs.sdata[i];
+	}
+	return *this;
+}
+
+
+const char* String::data() const 
+{
+	return sdata;
 }
 
 int String::capacity() const
@@ -110,12 +135,13 @@ void String::reserve(size_t n) //finns i STL, basic_string
 
 		for (int i = 0; i < newCapacity; i++)
 		{
-			ptr[i] = data[i];
+			ptr[i] = sdata[i];
 		}
-		//ptr[newCapacity - 1] = '\0';
-		delete[] data;
+		delete[] sdata;
+
+		ptr[newCapacity - 1] = '\0';
 		length = newCapacity;
-		data = ptr;
+		sdata = ptr;
 	}
 }
 
@@ -130,12 +156,12 @@ void String::resize(size_t n)
 
 		for (int i = 0; i < newLength; i++)
 		{
-			ptr[i] = data[i]; //flyttar de object som får plats i den mindre listan från den gammla listan
+			ptr[i] = sdata[i]; //flyttar de object som får plats i den mindre listan från den gammla listan
 		}
-		delete[] data;
+		delete[] sdata;
 		length = newLength;
 		ptr[newLength - 1] = '\0';
-		data = ptr;
+		sdata = ptr;
 	}
 
 	if (length < newLength)
@@ -150,28 +176,43 @@ void String::shrink_to_fit()
 	int minLength = 0;
 	for (int i = 0; i < length; i++)
 	{
-		if (data[i] =! '\0')
+		if (sdata[i] == '\0')
 		{
-			minLength++;
+			break; 
 		}
 		else
 		{
-			break;
+			minLength++;
 		}
 	}
-
+	minLength++;
 	char* ptr = new char[minLength];
 
 	for (int i = 0; i < minLength; i++)
 	{
-		ptr[i] = data[i];
+		ptr[i] = sdata[i];
 	}
 
-	delete[] data;
+	delete[] sdata;
 	ptr[minLength - 1] = '\0';
 	length = minLength;
-	data = ptr;
+	sdata = ptr;
 }
+
+void String::push_back(char c)
+{
+	int tempLength = length;
+	reserve(sizeof(char));
+
+	sdata[tempLength - 1] = c;
+	//sdata[length + 1] = '\0';
+
+	
+
+
+
+}
+
 
 
 

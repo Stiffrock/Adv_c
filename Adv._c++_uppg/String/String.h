@@ -7,7 +7,7 @@
 class String
 {
 private:
-	char* data;
+	char* sdata;
 	char* last;
 	int length;
 
@@ -19,7 +19,7 @@ public:
 	~String();
 
 	char& at(size_t i); //indexerar med range check (bounds checking?)
-	const char* Data() const; //gives a reference of the internal array holding string, it must also benull character terminated. (meaning that there must be an extra null character last in your array
+	const char* data() const; //gives a reference of the internal array holding string, it must also benull character terminated. (meaning that there must be an extra null character last in your array
 
 	int size() const; //finns i STL, basic_string
 	void reserve(size_t); //finns i STL, basic_string
@@ -31,47 +31,17 @@ public:
 	
 
 	String& operator+=(const String& rhs); // tolkas som konkatenering
-	//{
-	//	int oldLength = length;
-	//	int addLength = rhs.length + 1;
+	String& operator+ (const char* cstr);
+	String& operator=(const String& rhs);
 
-	//	reserve(addLength);
-	//	for (int i = 0; i < rhs.length + 1; i++)
-	//	{
-	//		data[(oldLength - 1) + i] = rhs[i];
-	//	}
-	//	data[length - 1] = '\0';
-
-	//	return *this;
-
-	//}
-
-	String& operator+ (const char* cstr)
+	char& String::operator[](size_t i)
 	{
-		int oldLength = length;
-		int addLength =  strlen(cstr) + 1 ;
-		
-		reserve(addLength);
-		for (int i = 0; i < strlen(cstr) + 1; i++)
-		{
-			data[(oldLength - 1) + i] = cstr[i];
-		}
-		data[length - 1] = '\0';
-
-
-		/*int oldLength = length;
-		int newLength = length + cstr;
-		reserve(newLength);
-
-		for (int i = 1; i <  - 1; i++)
-		{
-			data[oldLength + i] = rhs.data[i];
-		}
-		data[length - 1] = '\0';*/
-		
-		return *this;
+		return *(sdata + i);
 	}
-
+	const char& String::operator[](size_t i) const
+	{
+		return *(sdata + i);
+	}
 
 	friend bool operator==(const String& lhs, const String& rhs)
 	{		
@@ -82,7 +52,7 @@ public:
 			int i = 0;
 			while (i != max_count)
 			{
-				if (lhs.data[i] != rhs.data[i])
+				if (lhs.sdata[i] != rhs.sdata[i])
 				{
 					counter++;
 				}
@@ -108,7 +78,7 @@ public:
 			int i = 0;
 			while (i != max_count)
 			{
-				if (lhs.data[i] != rhs.data[i])
+				if (lhs.sdata[i] != rhs.sdata[i])
 				{
 					counter++;
 				}
@@ -124,27 +94,6 @@ public:
 		{
 			return true;
 		}
-	}
-
-	char& String::operator[](size_t i)
-	{
-		return *(data + i);
-	}
-	const char& String::operator[](size_t i) const
-	{
-		return *(data + i);
-	}
-	String& String::operator=(const String& rhs)
-	{
-		length = rhs.length;
-		delete[] data;
-		//data = new char[length];
-		for (int i = 0; i < length; i++)
-		{
-			data[i] = rhs.data[i];
-		}
-		return *this;
-	
 	}
 };
 
