@@ -16,8 +16,8 @@ public:
 	float data;
 	Node2(float v = 0) :data(v) {}
 
-	virtual std::ostream& Print(std::ostream& cout) {
-		return cout << data;
+	friend std::ostream& operator<<(std::ostream& cout, const Node2& node) {
+		return cout << node.data;
 	}
 
 	bool Node2::operator==(float rhs) const
@@ -33,6 +33,9 @@ template List<Node2>;    //Detta tvingar fram att allting i List kompileras
 void TestDLL() {
 
 	List<Node2> myList;
+
+	
+
 	assert(myList.Check());
 	Node2 * nodeA3 = myList.InsertFirst(new Node2(3));
 	assert(myList.Check());
@@ -44,6 +47,10 @@ void TestDLL() {
 	myList.InsertLast(new Node2(3));
 	assert(myList.Check());
 	assert(myList.Last()->Next() == nullptr);
+
+	const List<Node2> &list2 = myList;
+	cout << list2;
+
 	cout << myList;    //should be 1 2 3 1 2 3
 
 	Node2 * tempA3 = myList.FindNext(3);
@@ -85,43 +92,47 @@ int main()
 {
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 
-	List<Node<float>> list;
-	const List<Node<float>>* list2 = &list;
-	 
-	
+	//List<Node<float>> list;
 
-	//list2->InsertLast(new Node<float>(1));	
-	//const Node<float>* nodex = list2->FindNext(1);
+	//Node<float>* newNode = new Node<float>(1);
 
+	//list.InsertAfter(newNode);
 
-	Node<float>* newNode = new Node<float>(1);
-	Node<float>* newNode2 = new Node<float>(2);
-	Node<float>* newNode3 = new Node<float>(3);
-	Node<float>* newNode4 = new Node<float>(4);
+	//const List<Node<float>> &list2 = list; 
+	////list2->InsertLast(new Node<float>(1));	
+	//const Node<float>* nodex = list2.FindNext(1);
 
 
-	list.InsertFirst(newNode);
-	newNode->InsertBefore(newNode2);
-	newNode2->InsertAfter(newNode3);
-
-	Node<float>* f = newNode3->DeleteAfter();
-	delete f;
-	list.InsertLast(newNode4);
-	Node<float>* temp = newNode2->FindNext(3);
-	Node<float>* temp2 = list.FindFirst(2);
+	//cout << list2;
 
 
-	Node<float>* n = list.PopFirst();
-	delete n;
-	cout << list;
+	//Node<float>* newNode2 = new Node<float>(2);
+	//Node<float>* newNode3 = new Node<float>(3);
+	//Node<float>* newNode4 = new Node<float>(4);
 
 
-	Node<float>* d = list.PopFirst();
-	do
-	{
-		delete d;
-		d = list.PopFirst();
-	} while (d != nullptr);
+	//list.InsertFirst(newNode);
+	//newNode->InsertBefore(newNode2);
+	//newNode2->InsertAfter(newNode3);
+
+	//Node<float>* f = newNode3->DeleteAfter();
+	//delete f;
+	//list.InsertLast(newNode4);
+	//Node<float>* temp = newNode2->FindNext(3);
+	//Node<float>* temp2 = list.FindFirst(2);
+
+
+	//Node<float>* n = list.PopFirst();
+	//delete n;
+	//cout << list;
+
+
+	//Node<float>* d = list.PopFirst();
+	//do
+	//{
+	//	delete d;
+	//	d = list.PopFirst();
+	//} while (d != nullptr);
 
 
 

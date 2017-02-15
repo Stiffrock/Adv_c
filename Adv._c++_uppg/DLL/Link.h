@@ -17,8 +17,7 @@ public:
 	virtual ~Link() = default;
 
 	void Check();
-
-	virtual std::ostream& Print(std::ostream& cout) { return cout; }
+	virtual std::ostream& Print(std::ostream& cout) const { return cout; }
 
 	T* Next();
 	const T* Next() const;

@@ -1,6 +1,9 @@
-﻿  String.cpp
-c:\users\christofer\documents\github\adv_c\adv._c++_uppg\string\string.cpp(99): warning C4018: '<': signed/unsigned mismatch
-c:\users\christofer\documents\github\adv_c\adv._c++_uppg\string\string.cpp(136): warning C4018: '<': signed/unsigned mismatch
-c:\users\christofer\documents\github\adv_c\adv._c++_uppg\string\string.cpp(75): warning C4715: 'String::at': not all control paths return a value
-  String.vcxproj -> C:\Users\Christofer\Documents\GitHub\Adv_c\Adv._c++_uppg\Debug\String.exe
-  String.vcxproj -> C:\Users\Christofer\Documents\GitHub\Adv_c\Adv._c++_uppg\Debug\String.pdb (Partial PDB)
+﻿Build started 2017-02-15 13:26:20.
+     1>Project "C:\Users\chris_000\Documents\GitHub\Adv_c\Adv._c++_uppg\String\String.vcxproj" on node 3 (Build target(s)).
+     1>Link:
+         String.vcxproj -> C:\Users\chris_000\Documents\GitHub\Adv_c\Adv._c++_uppg\Debug\String.exe
+     1>Done Building Project "C:\Users\chris_000\Documents\GitHub\Adv_c\Adv._c++_uppg\String\String.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.45

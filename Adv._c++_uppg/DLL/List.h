@@ -27,17 +27,18 @@ public:
 	T* InsertLast(T* item);
 
 	T* PopFirst();
+
 	const bool Check();
 
 	template<class X>
 	T * FindFirst(const X& searchFor) { return FindNext(searchFor); }
 
-	friend std::ostream& operator<<(std::ostream& cout, List& list) {
-		return list.Print(cout);
-		
+
+	friend std::ostream& operator<<(std::ostream& cout, const List& list) {
+		return list.Print(cout);	
 	}
 private:
-	std::ostream& Print(std::ostream& cout);
+	std::ostream& Print(std::ostream& cout) const;
 };
 
 template <class T> 
@@ -113,10 +114,14 @@ const bool List<T>::Check() {
 
 
 template <class T>
-std::ostream& List<T>::Print(std::ostream& cout) {
-	for (Link<T>* item = First(); item; item = item->Next()) {
-		item->Print(cout) << ' ';
+std::ostream& List<T>::Print(std::ostream& cout) const {
+
+	for (const T* itr = First(); itr != nullptr; itr = itr->Next())
+	{	
+		cout << *itr;
+	//	dynamic_cast<Link<T>*>(itr)->Print(cout);
 	}
+
 	cout << '\n';
 	return cout;
 }
