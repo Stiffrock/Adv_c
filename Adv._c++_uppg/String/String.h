@@ -29,6 +29,9 @@ public:
 	void resize(size_t n); // Ändrar antalet tacken till n, om n > length så fylls det på med char()
 	
 	
+	operator bool() {
+		return sdata;
+	};
 
 	String& operator+=(const String& rhs); // tolkas som konkatenering
 	String& operator+ (const char* cstr);

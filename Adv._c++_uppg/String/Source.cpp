@@ -114,21 +114,21 @@ int main()
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 	std::locale::global(std::locale("swedish"));
 
-	String str("hej");
-	String s(" då");
-	String str2(s);
+	//String str("hej");
+	//String s(" då");
+	//String str2(s);
 
-	char x = str2.at(4);
-	str + " då";
-	str.reserve(5);
+	//char x = str2.at(4);
+	//str + " då";
+	//str.reserve(5);
 
-	str.resize(10);
-	str.shrink_to_fit();
+	//str.resize(10);
+	//str.shrink_to_fit();
 
-	str.push_back('k');
+	//str.push_back('k');
 	
 	//TestUnsigned();
-	//TestFörGodkäntString();
+	TestFörGodkäntString();
 	int c = 0;
 
 }

@@ -13,6 +13,10 @@ String::String()
 	sdata[length - 1] = '\0'; //inte säker på detta, den ska vara null terminated men är inte length +1 redan null..?
 }
 
+
+//if string is full length is equal to capacity
+
+
 //Tar en sträng input och skapar en String utav det.
 String::String(const char* cstr)
 {
@@ -45,7 +49,6 @@ String::~String()
 }
 
 
-
 int String::size() const
 {
 	int i = 0;
@@ -70,8 +73,6 @@ char& String::at(size_t i) //indexerar med range check
 	{
 		return sdata[0];
 	}
-	
-
 }
 
 
@@ -107,12 +108,14 @@ String& String::operator+ (const char* cstr)
 String& String::operator=(const String& rhs)
 {
 	length = rhs.length;
-	delete[] sdata;
-	//data = new char[length];
+	char* ptr = new char[length];
+	//sdata = new char[length];
 	for (int i = 0; i < length; i++)
 	{
-		sdata[i] = rhs.sdata[i];
+		ptr[i] = rhs.sdata[i];
 	}
+	delete[] sdata;
+	sdata = ptr;
 	return *this;
 }
 
@@ -126,6 +129,9 @@ int String::capacity() const
 {
 	return length;
 }
+
+//när du allokerar nytt minne kör dubbelt bara
+
 void String::reserve(size_t n) //finns i STL, basic_string
 {
 	size_t newCapacity = length + n;
@@ -138,7 +144,6 @@ void String::reserve(size_t n) //finns i STL, basic_string
 			ptr[i] = sdata[i];
 		}
 		delete[] sdata;
-
 		ptr[newCapacity - 1] = '\0';
 		length = newCapacity;
 		sdata = ptr;
@@ -205,13 +210,10 @@ void String::push_back(char c)
 	reserve(sizeof(char));
 
 	sdata[tempLength - 1] = c;
-	//sdata[length + 1] = '\0';
-
-	
-
-
 
 }
+
+
 
 
 
