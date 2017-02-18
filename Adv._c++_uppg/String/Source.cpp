@@ -37,6 +37,7 @@ void TestPushBackReallocation() {
 		assert(cap == str.capacity());
 		assert(i == str.size());
 	}
+	
 	str.push_back(char(i));
 	assert(internalBuf != str.data());
 	assert(cap < str.capacity());

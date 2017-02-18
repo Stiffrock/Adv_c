@@ -48,9 +48,9 @@ public:
 
 	friend bool operator==(const String& lhs, const String& rhs)
 	{		
-		if (lhs.length == rhs.length)
+		//if (lhs.length == rhs.length)
 		{
-			int max_count = lhs.length;
+			int max_count = lhs.size();
 			int counter = 0;
 			int i = 0;
 			while (i != max_count)
@@ -67,10 +67,10 @@ public:
 			}
 			return true;
 		}
-		else
+		/*else
 		{
 			return false;
-		}	
+		}	*/
 	}
 	friend bool operator!=(const String& lhs, const String& rhs)
 	{

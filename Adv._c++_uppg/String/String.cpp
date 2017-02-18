@@ -130,25 +130,7 @@ int String::capacity() const
 	return length;
 }
 
-//när du allokerar nytt minne kör dubbelt bara
 
-void String::reserve(size_t n) //finns i STL, basic_string
-{
-	size_t newCapacity = length + n;
-	//if (newCapacity > length)
-	{
-		char* ptr = new char[newCapacity];
-
-		for (int i = 0; i < newCapacity; i++)
-		{
-			ptr[i] = sdata[i];
-		}
-		delete[] sdata;
-		ptr[newCapacity - 1] = '\0';
-		length = newCapacity;
-		sdata = ptr;
-	}
-}
 
 void String::resize(size_t n)
 {
@@ -206,11 +188,38 @@ void String::shrink_to_fit()
 
 void String::push_back(char c)
 {
-	int tempLength = length;
-	reserve(sizeof(char));
+	int currentSize = size();
+	int cap = capacity();
 
-	sdata[tempLength - 1] = c;
+	if ((currentSize + 1) >= cap)
+	{
+		reserve(c);
+	}
+	sdata[currentSize] = c;
+//	sdata[currentSize + 1] = '\0'; // detta är det siom fuckar det
+	delete[] sdata;
+}
 
+//när du allokerar nytt minne kör dubbelt bara
+
+void String::reserve(size_t n) //finns i STL, basic_string
+{
+	size_t newCapacity = length * 2;
+	//if (size() + n > capacity())
+	{
+		char* ptr = new char[newCapacity];
+		ptr[newCapacity] = '\0';
+
+		for (int i = 0; i < length; i++)
+		{
+			ptr[i] = sdata[i];
+		}
+		//ptr[(length+n) - 1] = '\0';
+		length = newCapacity;
+		delete[] sdata;
+
+		sdata = ptr;
+	}
 }
 
 
