@@ -10,7 +10,6 @@
 
 #define VG
 
-//#include "UnsignedTest.h"
 #include "String.h"
 
 //#include <string>
@@ -26,19 +25,18 @@ using std::cin;
 void TestPushBackReallocation() {
 	String str("hej");
 	assert(str.size() <= str.capacity());
-
 	auto internalBuf = str.data();
 	auto cap = str.capacity();
 	auto siz = str.size();
 	int i;
 	for (i = siz + 1; i <= cap; ++i) {
-		str.push_back(char(i) + 'a');
+		str.push_back(char(i) + 'a'); // ska inte kalla på reserve		
 		assert(internalBuf == str.data());
 		assert(cap == str.capacity());
-		assert(i == str.size());
+		assert(i == str.size());	
 	}
-	
-	str.push_back(char(i));
+
+	str.push_back(char(i)); // denna ska kalla på reserve 
 	assert(internalBuf != str.data());
 	assert(cap < str.capacity());
 	assert(i == str.size());
@@ -51,6 +49,10 @@ void TestPushBackReallocation() {
 	assert(internalBuf != str.data());
 	assert(str.size() == str.capacity());
 	assert(i == str.size());
+
+	const char* ptrToDelete = str.data();
+	delete[] ptrToDelete;
+
 }
 
 void TestFörGodkäntString() {
@@ -65,7 +67,7 @@ void TestFörGodkäntString() {
 	String str(s1); assert(str == "foo");
 	String s3("bar");  assert(s3 == "bar");
 
-	//-	~String() Kom ihåg destruktorn!
+	~String(); //Kom ihåg destruktorn!
 	delete new String("hej");
 
 	//	-	operator =(Sträng sträng)
@@ -80,8 +82,8 @@ void TestFörGodkäntString() {
 
 	// operator bool
 
-	/*assert(String("huj"));
-	assert(!String(""));*/
+	assert(String("huj"));
+	assert(!String(""));
 
 	//-	operator== 
 	//testas överallt!
@@ -102,10 +104,12 @@ void TestFörGodkäntString() {
 	str = "bar";
 	str.push_back('a');
 	assert(str == "bara");
+	const char* ptrToDelete = str.data();
+	delete[] ptrToDelete;
 
 	//-	size(), capacity() and reloccation test;
 	TestPushBackReallocation();
-
+	int x = 0;
 	//cout << String("hej\n");
 	//cout << "Om det står hej på föregående rad så är TestFörGodkänt klar\n";
 }

@@ -30,7 +30,15 @@ public:
 	
 	
 	operator bool() {
-		return sdata;
+		if (length == 1)
+		{
+			return false;
+		}
+		else
+		{
+			return sdata;
+
+		}
 	};
 
 	String& operator+=(const String& rhs); // tolkas som konkatenering
@@ -48,29 +56,24 @@ public:
 
 	friend bool operator==(const String& lhs, const String& rhs)
 	{		
-		//if (lhs.length == rhs.length)
+		
+		int max_count = lhs.size();
+		int counter = 0;
+		int i = 0;
+		while (i != max_count)
 		{
-			int max_count = lhs.size();
-			int counter = 0;
-			int i = 0;
-			while (i != max_count)
+			if (lhs.sdata[i] != rhs.sdata[i])
 			{
-				if (lhs.sdata[i] != rhs.sdata[i])
-				{
-					counter++;
-				}
-				i++;
+				counter++;
 			}
-			if (counter != 0)
-			{
-				return false;
-			}
-			return true;
+			i++;
 		}
-		/*else
+		if (counter != 0)
 		{
 			return false;
-		}	*/
+		}
+		return true;
+		
 	}
 	friend bool operator!=(const String& lhs, const String& rhs)
 	{

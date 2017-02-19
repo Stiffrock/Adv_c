@@ -1,6 +1,6 @@
-﻿  String.cpp
-c:\users\christofer\documents\github\adv_c\adv._c++_uppg\string\string.h(33): warning C4800: 'char *': forcing value to bool 'true' or 'false' (performance warning)
-c:\users\christofer\documents\github\adv_c\adv._c++_uppg\string\string.cpp(100): warning C4018: '<': signed/unsigned mismatch
-c:\users\christofer\documents\github\adv_c\adv._c++_uppg\string\string.cpp(76): warning C4715: 'String::at': not all control paths return a value
+﻿  Source.cpp
+c:\users\christofer\documents\github\adv_c\adv._c++_uppg\string\string.h(39): warning C4800: 'char *': forcing value to bool 'true' or 'false' (performance warning)
+c:\users\christofer\documents\github\adv_c\adv._c++_uppg\string\source.cpp(72): warning C4804: '~': unsafe use of type 'bool' in operation
+c:\users\christofer\documents\github\adv_c\adv._c++_uppg\string\source.cpp(72): warning C4552: '~': operator has no effect; expected operator with side-effect
   String.vcxproj -> C:\Users\Christofer\Documents\GitHub\Adv_c\Adv._c++_uppg\Debug\String.exe
   String.vcxproj -> C:\Users\Christofer\Documents\GitHub\Adv_c\Adv._c++_uppg\Debug\String.pdb (Partial PDB)

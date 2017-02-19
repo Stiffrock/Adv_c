@@ -20,7 +20,7 @@ String::String()
 //Tar en sträng input och skapar en String utav det.
 String::String(const char* cstr)
 {
-	length = strlen(cstr) + 1;
+	length = strlen(cstr) + 1; // *2
 	sdata = new char[length];
 
 	for (int i = 0; i < length; i++)
@@ -57,7 +57,7 @@ int String::size() const
 	{
 		i++;
 	}
-	return i;
+	return i + 1;
 }
 
 char& String::at(size_t i) //indexerar med range check
@@ -188,38 +188,35 @@ void String::shrink_to_fit()
 
 void String::push_back(char c)
 {
-	int currentSize = size();
-	int cap = capacity();
+	int currentSize = size(); // storleken på strängen
+	int cap = capacity(); // mängen allokerat minne
 
-	if ((currentSize + 1) >= cap)
+	if (currentSize == cap) 
 	{
 		reserve(c);
 	}
-	sdata[currentSize] = c;
-//	sdata[currentSize + 1] = '\0'; // detta är det siom fuckar det
-	delete[] sdata;
+
+	sdata[currentSize - 1] = c; //dennna är sista 	
+	sdata[currentSize] = '\0';
 }
 
 //när du allokerar nytt minne kör dubbelt bara
 
 void String::reserve(size_t n) //finns i STL, basic_string
 {
-	size_t newCapacity = length * 2;
-	//if (size() + n > capacity())
+	size_t newCapacity = (length * 2) + sizeof(n); // dubblera den nya containern
+	
+	char* ptr = new char[newCapacity]; // gör en pekare som pekar på den nya utökade containern
+	ptr[newCapacity - 1] = '\0'; // nullterminera slutet på containern
+
+	for (int i = 0; i < length; i++) // för över all nuvarande data
 	{
-		char* ptr = new char[newCapacity];
-		ptr[newCapacity] = '\0';
-
-		for (int i = 0; i < length; i++)
-		{
-			ptr[i] = sdata[i];
-		}
-		//ptr[(length+n) - 1] = '\0';
-		length = newCapacity;
-		delete[] sdata;
-
-		sdata = ptr;
+		ptr[i] = sdata[i];
 	}
+	//ptr[length] = '\0'; // nullterminera slutet på containern
+	length = newCapacity; // nya längden
+	delete[] sdata; // ta bort den gammla datan
+	sdata = ptr; 	
 }
 
 
