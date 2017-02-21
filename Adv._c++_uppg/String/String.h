@@ -18,7 +18,6 @@ public:
 	String(const char* cstr);
 	~String();
 
-
 	bool Invariant()
 	{
 		return sdata == nullptr || *sdata == *sdata;
