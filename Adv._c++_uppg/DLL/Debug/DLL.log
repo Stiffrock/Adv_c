@@ -24,9 +24,9 @@ c:\users\christofer\documents\github\adv_c\adv._c++_uppg\dll\link.h(92): warning
               T=Node2,
               X=int
           ]
-  Node.cpp
   List.cpp
   Link.cpp
   Generating Code...
+  LINK : C:\Users\Christofer\Documents\GitHub\Adv_c\Adv._c++_uppg\Debug\DLL.exe not found or not built by the last incremental link; performing full link
   DLL.vcxproj -> C:\Users\Christofer\Documents\GitHub\Adv_c\Adv._c++_uppg\Debug\DLL.exe
   DLL.vcxproj -> C:\Users\Christofer\Documents\GitHub\Adv_c\Adv._c++_uppg\Debug\DLL.pdb (Partial PDB)

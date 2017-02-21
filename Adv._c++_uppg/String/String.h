@@ -18,6 +18,12 @@ public:
 	String(const char* cstr);
 	~String();
 
+
+	bool Invariant()
+	{
+		return sdata == nullptr || *sdata == *sdata;
+	}
+
 	char& at(size_t i); //indexerar med range check (bounds checking?)
 	const char* data() const; //gives a reference of the internal array holding string, it must also benull character terminated. (meaning that there must be an extra null character last in your array
 
@@ -28,7 +34,13 @@ public:
 	void push_back(char c); // lagger till tecken sist
 	void resize(size_t n); // Ändrar antalet tacken till n, om n > length så fylls det på med char()
 	
-	
+	friend std::ostream& operator<<(std::ostream& cout, const String& rhs) 
+	{
+		for (size_t i = 0; i < rhs.length - 1; ++i)
+			cout << rhs.sdata[i];
+		return cout;
+	}
+
 	operator bool() {
 		if (length == 1)
 		{
@@ -37,7 +49,6 @@ public:
 		else
 		{
 			return sdata;
-
 		}
 	};
 

@@ -49,10 +49,6 @@ void TestPushBackReallocation() {
 	assert(internalBuf != str.data());
 	assert(str.size() == str.capacity());
 	assert(i == str.size());
-
-	const char* ptrToDelete = str.data();
-	delete[] ptrToDelete;
-
 }
 
 void TestFörGodkäntString() {
@@ -104,13 +100,11 @@ void TestFörGodkäntString() {
 	str = "bar";
 	str.push_back('a');
 	assert(str == "bara");
-	const char* ptrToDelete = str.data();
-	delete[] ptrToDelete;
 
 	//-	size(), capacity() and reloccation test;
 	TestPushBackReallocation();
 	int x = 0;
-	//cout << String("hej\n");
+	cout << String("hej\n");
 	//cout << "Om det står hej på föregående rad så är TestFörGodkänt klar\n";
 }
 
@@ -119,21 +113,9 @@ int main()
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 	std::locale::global(std::locale("swedish"));
 
-	//String str("hej");
-	//String s(" då");
-	//String str2(s);
-
-	//char x = str2.at(4);
-	//str + " då";
-	//str.reserve(5);
-
-	//str.resize(10);
-	//str.shrink_to_fit();
-
-	//str.push_back('k');
 	
 	//TestUnsigned();
 	TestFörGodkäntString();
-	int c = 0;
+	std::cin.get();
 
 }

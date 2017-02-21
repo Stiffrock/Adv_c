@@ -11,6 +11,8 @@ String::String()
 	length = 1;
 	sdata = new char[length];
 	sdata[length - 1] = '\0'; //inte säker på detta, den ska vara null terminated men är inte length +1 redan null..?
+
+	Invariant();
 }
 
 
@@ -28,6 +30,8 @@ String::String(const char* cstr)
 		sdata[i] = cstr[i];
 	}
 	sdata[length - 1] = '\0';
+
+	Invariant();
 }
 
 //Copy constructor, skapar en ny char array med samma längd som förra
@@ -41,6 +45,8 @@ String::String(const String& rhs)
 		sdata[i] = rhs.sdata[i];
 	}
 	sdata[length - 1] = '\0';
+	Invariant();
+
 }
 
 String::~String()
@@ -88,6 +94,7 @@ String& String::operator+=(const String& rhs)
 	}
 	sdata[length - 1] = '\0';
 
+	Invariant();
 	return *this;
 }
 
@@ -102,6 +109,7 @@ String& String::operator+ (const char* cstr)
 		sdata[(oldLength - 1) + i] = cstr[i];
 	}
 	sdata[length - 1] = '\0';
+	Invariant();
 	return *this;
 }
 
@@ -116,6 +124,7 @@ String& String::operator=(const String& rhs)
 	}
 	delete[] sdata;
 	sdata = ptr;
+	Invariant();
 	return *this;
 }
 
@@ -128,6 +137,7 @@ const char* String::data() const
 int String::capacity() const
 {
 	return length;
+
 }
 
 
@@ -184,6 +194,7 @@ void String::shrink_to_fit()
 	ptr[minLength - 1] = '\0';
 	length = minLength;
 	sdata = ptr;
+	Invariant();
 }
 
 void String::push_back(char c)
@@ -198,6 +209,8 @@ void String::push_back(char c)
 
 	sdata[currentSize - 1] = c; //dennna är sista 	
 	sdata[currentSize] = '\0';
+	Invariant();
+
 }
 
 //när du allokerar nytt minne kör dubbelt bara
@@ -217,6 +230,8 @@ void String::reserve(size_t n) //finns i STL, basic_string
 	length = newCapacity; // nya längden
 	delete[] sdata; // ta bort den gammla datan
 	sdata = ptr; 	
+	Invariant();
+
 }
 
 
