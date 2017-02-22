@@ -105,7 +105,7 @@ void TestFörGodkäntString() {
 	TestPushBackReallocation();
 	int x = 0;
 	cout << String("hej\n");
-	//cout << "Om det står hej på föregående rad så är TestFörGodkänt klar\n";
+	cout << "Om det står hej på föregående rad så är TestFörGodkänt klar\n";
 }
 
 int main()

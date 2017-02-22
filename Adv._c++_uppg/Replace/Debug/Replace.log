@@ -1,3 +1,22 @@
-﻿  LINK : C:\Users\Christofer\Documents\GitHub\Adv_c\Adv._c++_uppg\Debug\Replace.exe not found or not built by the last incremental link; performing full link
-  Replace.vcxproj -> C:\Users\Christofer\Documents\GitHub\Adv_c\Adv._c++_uppg\Debug\Replace.exe
-  Replace.vcxproj -> C:\Users\Christofer\Documents\GitHub\Adv_c\Adv._c++_uppg\Debug\Replace.pdb (Partial PDB)
+﻿Build started 2017-02-22 14:59:40.
+     1>Project "C:\Users\chris_000\Documents\GitHub\Adv_c\Adv._c++_uppg\Replace\Replace.vcxproj" on node 2 (Rebuild target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D CODE_ANALYSIS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze /analyze:plugin"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\\bin\localespc.dll" /errorReport:prompt   /analyze:quiet Source.cpp
+         Source.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\chris_000\Documents\GitHub\Adv_c\Adv._c++_uppg\Debug\Replace.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG:FASTLINK /PDB:"C:\Users\chris_000\Documents\GitHub\Adv_c\Adv._c++_uppg\Debug\Replace.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\chris_000\Documents\GitHub\Adv_c\Adv._c++_uppg\Debug\Replace.lib" /MACHINE:X86 Debug\Source.obj
+         Replace.vcxproj -> C:\Users\chris_000\Documents\GitHub\Adv_c\Adv._c++_uppg\Debug\Replace.exe
+     1>c:\users\chris_000\documents\github\adv_c\adv._c++_uppg\replace\source.cpp(25): warning C6295: Ill-defined for-loop:  'const char' values are always of range '-128' to '127'.  Loop executes infinitely.
+     1>c:\users\chris_000\documents\github\adv_c\adv._c++_uppg\replace\source.cpp(28): warning C6295: Ill-defined for-loop:  'const char' values are always of range '-128' to '127'.  Loop executes infinitely.
+     1>c:\users\chris_000\documents\github\adv_c\adv._c++_uppg\replace\source.cpp(33): warning C6295: Ill-defined for-loop:  'const char' values are always of range '-128' to '127'.  Loop executes infinitely.
+     1>c:\users\chris_000\documents\github\adv_c\adv._c++_uppg\replace\source.cpp(104): warning C6295: Ill-defined for-loop:  'const char' values are always of range '-128' to '127'.  Loop executes infinitely.
+     1>c:\users\chris_000\documents\github\adv_c\adv._c++_uppg\replace\source.cpp(116): warning C6295: Ill-defined for-loop:  'const char' values are always of range '-128' to '127'.  Loop executes infinitely.
+     1>c:\users\chris_000\documents\github\adv_c\adv._c++_uppg\replace\source.cpp(128): warning C6295: Ill-defined for-loop:  'const char' values are always of range '-128' to '127'.  Loop executes infinitely.
+     1>c:\users\chris_000\documents\github\adv_c\adv._c++_uppg\replace\source.cpp(131): warning C6295: Ill-defined for-loop:  'const char' values are always of range '-128' to '127'.  Loop executes infinitely.
+     1>c:\users\chris_000\documents\github\adv_c\adv._c++_uppg\replace\source.cpp(132): warning C6269: Possibly incorrect order of operations:  dereference ignored.
+     1>c:\users\chris_000\documents\github\adv_c\adv._c++_uppg\replace\source.cpp(160): warning C6295: Ill-defined for-loop:  'char' values are always of range '-128' to '127'.  Loop executes infinitely.
+     1>Done Building Project "C:\Users\chris_000\Documents\GitHub\Adv_c\Adv._c++_uppg\Replace\Replace.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:10.02

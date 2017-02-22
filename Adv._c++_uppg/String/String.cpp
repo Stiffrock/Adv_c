@@ -8,8 +8,8 @@
 String::String() 
 {
 	last = nullptr;
+	sdata = new char[1];
 	length = 1;
-	sdata = new char[length];
 	sdata[length - 1] = '\0'; //inte säker på detta, den ska vara null terminated men är inte length +1 redan null..?
 
 	Invariant();
@@ -22,8 +22,9 @@ String::String()
 //Tar en sträng input och skapar en String utav det.
 String::String(const char* cstr)
 {
-	length = strlen(cstr) + 1; // *2
-	sdata = new char[length];
+	int newLength = strlen(cstr) + 1;
+	sdata = new char[newLength];
+	length = newLength;
 
 	for (int i = 0; i < length; i++)
 	{
@@ -38,8 +39,10 @@ String::String(const char* cstr)
 //kopierar över värdena
 String::String(const String& rhs)
 {
-	length = rhs.length;
-	sdata = new char[length];
+	int newLength = rhs.length;
+	sdata = new char[newLength];
+	length = newLength;
+
 	for (int i = 0; i < length - 1; i++)
 	{
 		sdata[i] = rhs.sdata[i];
@@ -75,7 +78,7 @@ char& String::at(size_t i) //indexerar med range check
 			return sdata[i - 1];
 		}
 	}
-	catch (const std::exception&) // index out of range
+	catch (const std::exception&) 
 	{
 		return sdata[0];
 	}
@@ -88,6 +91,7 @@ String& String::operator+=(const String& rhs)
 	int addLength = rhs.length + 1;
 
 	reserve(addLength);
+
 	for (int i = 0; i < rhs.length + 1; i++)
 	{
 		sdata[(oldLength - 1) + i] = rhs[i];
@@ -115,9 +119,10 @@ String& String::operator+ (const char* cstr)
 
 String& String::operator=(const String& rhs)
 {
-	length = rhs.length;
-	char* ptr = new char[length];
-	//sdata = new char[length];
+	int newLength = rhs.length;
+	char* ptr = new char[newLength];
+	length = newLength;
+
 	for (int i = 0; i < length; i++)
 	{
 		ptr[i] = rhs.sdata[i];
@@ -137,7 +142,6 @@ const char* String::data() const
 int String::capacity() const
 {
 	return length;
-
 }
 
 
