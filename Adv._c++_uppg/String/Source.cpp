@@ -113,9 +113,22 @@ int main()
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 	std::locale::global(std::locale("swedish"));
 
-	
+	String s = "abc";
+	String h = "cbd";
+//	String t = "123456789999999999999999999999999999999999999999999999999999999999999999999";
+//	String d = s + "aaer";
+	String d = s + h;
+	std::cout << d;
+
+	//char x = s.at(2);
+	//s.resize(10);
+	//s = s;
+	//cout << s;
 	//TestUnsigned();
-	TestFörGodkäntString();
+	//TestFörGodkäntString();
 	std::cin.get();
+
+	
+//	x = s.at(5);
 
 }

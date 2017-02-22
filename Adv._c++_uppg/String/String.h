@@ -10,6 +10,7 @@ private:
 	char* sdata;
 	char* last;
 	int length;
+	int Size;
 
 
 public:
@@ -36,7 +37,7 @@ public:
 	
 	friend std::ostream& operator<<(std::ostream& cout, const String& rhs) 
 	{
-		for (size_t i = 0; i < rhs.length - 1; ++i)
+		for (size_t i = 0; i < rhs.Size; ++i)
 			cout << rhs.sdata[i];
 		return cout;
 	}
@@ -53,8 +54,10 @@ public:
 	};
 
 	String& operator+=(const String& rhs); // tolkas som konkatenering
-	String& operator+ (const char* cstr);
+	String operator+ (const char* cstr);
 	String& operator=(const String& rhs);
+	String operator+ (const String& rhs);
+
 
 	char& String::operator[](size_t i)
 	{
