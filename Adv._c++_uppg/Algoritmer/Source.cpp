@@ -11,27 +11,18 @@
 
 using namespace std;
 
-
-
-template <class ForwardIterator>
-bool Compare(ForwardIterator cmp1, ForwardIterator cmp2)
-{
-	return *cmp1 > *cmp2;
-}
-
-
 template <class ForwardIterator>
 void ForwardSort(ForwardIterator begin, ForwardIterator end)
 {
-	ForwardIterator itr;
-	ForwardIterator itr2;
 
-	for (itr = begin; itr != end; itr++)
+	for (ForwardIterator i = begin; i != end; i++)
 	{
-		for (itr2 = begin; itr2 != end; itr2++)
+		for (ForwardIterator j = begin; j != end; j++)
 		{
-			ForwardIterator next = itr2++;
-			Compare(itr2, next);
+			if (*i > *j)
+			{
+				iter_swap(i, j);
+			}				
 		}
 	}
 };
@@ -124,23 +115,32 @@ void removeif()
 	}	
 }
 
-void Bubblesort()
+void fsort()
 {
-	
-
 	forward_list<int> list;
 	srand((unsigned)time(NULL));
-	int r = rand();
 	for (int i = 0; i < 10; i++)
-	{
+	{		
+		int r = rand();
 		list.push_front(r);
+	}
+
+	forward_list<int>::iterator itr;
+	cout << "\nUnsorted" << endl;
+	for (itr = begin(list); itr != end(list); itr++)
+	{
+		cout << *itr << endl;
 	}
 
 	ForwardSort(begin(list), end(list));
 
+	cout << "\nSorted with ForwardSort" << endl;
+	for (itr = begin(list); itr != end(list); itr++)
+	{
+		cout << *itr << endl;
+	}
 
-	int x = 0;
-	
+	int x = 0;	
 }
 
 
@@ -150,7 +150,7 @@ int main()
 	//VectorSort();
 	//ArraySort();
 	//removeif();
-	Bubblesort();
+	fsort();
 	std::cin.get();
 	return 0;
 }
