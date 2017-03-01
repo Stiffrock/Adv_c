@@ -6,7 +6,7 @@
 #include <exception>
 
 //Sätter längden till 1 och initierar char array
-String::String() 
+String::String()
 {
 	last = nullptr;
 	sdata = new char[1];
@@ -26,7 +26,7 @@ String::String(const char* cstr)
 	int newLength = strlen(cstr) + 1;
 	sdata = new char[newLength];
 	length = newLength;
-	Size = newLength - 1; 
+	Size = newLength - 1;
 
 	for (int i = 0; i < length; i++)
 	{
@@ -34,7 +34,7 @@ String::String(const char* cstr)
 
 	}
 	sdata[length - 1] = '\0';
-	
+
 	Invariant();
 }
 
@@ -66,7 +66,7 @@ String::~String()
 int String::size() const
 {
 	int i = 0;
-	
+
 	while (sdata[i] != '\0') //Har för mig han kommenterade detta, och att det inte var rätt sätt, kanske använda begin och end istället, men hur?
 	{
 		i++;
@@ -75,17 +75,17 @@ int String::size() const
 }
 
 char& String::at(size_t i) //indexerar med range check
-{		
+{
 
 	if ((int)i - 1 <= Size)
 	{
 		return sdata[i - 1];
 	}
-	
+
 	throw std::out_of_range("Error");
 
-//	return sdata[0]
-	
+	//	return sdata[0]
+
 }
 
 
@@ -120,7 +120,7 @@ String String::operator+ (const String& rhs)
 String String::operator+ (const char* cstr)
 {
 	String newString = String();
-	
+
 	newString += *this;
 	newString += String(cstr);
 
@@ -146,7 +146,7 @@ String& String::operator=(const String& rhs)
 }
 
 
-const char* String::data() const 
+const char* String::data() const
 {
 	return sdata;
 }
@@ -191,7 +191,7 @@ void String::shrink_to_fit()
 	{
 		if (sdata[i] == '\0')
 		{
-			break; 
+			break;
 		}
 		else
 		{
@@ -215,13 +215,13 @@ void String::shrink_to_fit()
 
 void String::push_back(char c)
 {
-//	int currentSize = size(); // storleken på strängen
+	//	int currentSize = size(); // storleken på strängen
 	int currentSize = Size + 1;
 	int cap = capacity(); // mängen allokerat minne
 
-	if (currentSize == cap) 
+	if (currentSize == cap)
 	{
-		reserve((cap*2) + 1);
+		reserve((cap * 2) + 1);
 	}
 
 	sdata[currentSize - 1] = c; //dennna är sista 
@@ -248,7 +248,7 @@ void String::reserve(size_t n) //finns i STL, basic_string
 
 	length = newCap; // nya längden
 	delete[] sdata; // ta bort den gammla datan
-	sdata = ptr; 	
+	sdata = ptr;
 	Invariant();
 
 }

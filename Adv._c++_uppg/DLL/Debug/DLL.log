@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿Build started 2017-02-22 14:59:41.
      1>Project "C:\Users\chris_000\Documents\GitHub\Adv_c\Adv._c++_uppg\DLL\DLL.vcxproj" on node 3 (Rebuild target(s)).
      1>ClCompile:
@@ -45,3 +46,7 @@
 Build succeeded.
 
 Time Elapsed 00:00:25.37
+=======
+﻿  DLL.vcxproj -> C:\Users\Christofer\Documents\GitHub\Adv_c\Adv._c++_uppg\Debug\DLL.exe
+  DLL.vcxproj -> C:\Users\Christofer\Documents\GitHub\Adv_c\Adv._c++_uppg\Debug\DLL.pdb (Partial PDB)
+>>>>>>> a8a6775cb196297bf335d8518e062dcdb047fd19

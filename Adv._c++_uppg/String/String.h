@@ -34,8 +34,8 @@ public:
 	void shrink_to_fit(); //till skillnad från std så krävs här att utrymmet krymps maximalt så String tar så lite utrymme som möjligt
 	void push_back(char c); // lagger till tecken sist
 	void resize(size_t n); // Ändrar antalet tacken till n, om n > length så fylls det på med char()
-	
-	friend std::ostream& operator<<(std::ostream& cout, const String& rhs) 
+
+	friend std::ostream& operator<<(std::ostream& cout, const String& rhs)
 	{
 		for (size_t i = 0; i < rhs.Size; ++i)
 			cout << rhs.sdata[i];
@@ -69,8 +69,8 @@ public:
 	}
 
 	friend bool operator==(const String& lhs, const String& rhs)
-	{		
-		
+	{
+
 		int max_count = lhs.size();
 		int counter = 0;
 		int i = 0;
@@ -87,7 +87,7 @@ public:
 			return false;
 		}
 		return true;
-		
+
 	}
 	friend bool operator!=(const String& lhs, const String& rhs)
 	{
