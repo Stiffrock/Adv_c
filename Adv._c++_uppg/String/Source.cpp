@@ -115,8 +115,8 @@ int main()
 
 	String s = "abc";
 	String h = "cbd";
-//	String t = "123456789999999999999999999999999999999999999999999999999999999999999999999";
-//	String d = s + "aaer";
+	//whaddup
+	int sec = 0;
 	String d = s + h;
 	std::cout << d;
 
