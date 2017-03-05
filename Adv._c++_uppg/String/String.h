@@ -3,6 +3,7 @@
 #include <new>
 #include <iostream>
 #include <iterator>
+#include "StringItr.h"
 
 class String
 {
@@ -19,6 +20,8 @@ public:
 	String(const char* cstr);
 	~String();
 
+	typedef StringItr iterator;
+	typedef ReverseStringItr reverse_iterator;
 
 	bool Invariant()
 	{
@@ -27,6 +30,17 @@ public:
 
 	char& at(size_t i); //indexerar med range check (bounds checking?)
 	const char* data() const; //gives a reference of the internal array holding string, it must also benull character terminated. (meaning that there must be an extra null character last in your array
+
+	iterator begin() { return iterator(sdata); }
+	iterator end() { return iterator(last); }
+
+	//reverse_iterator rbegin() { return reverse_iterator(last); }
+	//char* rend() { return sdata; }
+
+	reverse_iterator rbegin() { return reverse_iterator(--last); }
+	reverse_iterator rend() {return reverse_iterator(--sdata); }
+
+
 
 	int size() const; //finns i STL, basic_string
 	void reserve(size_t); //finns i STL, basic_string

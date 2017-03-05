@@ -5,9 +5,10 @@
 #define new DBG_NEW
 #endif
 #endif  // _DEBUG
+#define ITT
 #include <stdlib.h>
 #include <crtdbg.h>
-
+#include "String.h"
 
 ////#include "UnsignedTest.h"
 //#include "String.h"
@@ -18,7 +19,7 @@
 using std::cout;
 using std::cin;
 //
-//#include <cassert>
+#include <cassert>
 //
 ////#include <utility>
 
@@ -28,6 +29,8 @@ using std::cin;
 int main() {
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 	std::locale::global(std::locale("swedish"));
+
+	
 	//TestUnsigned();
 	TestFörGodkäntString();
 #ifdef VG

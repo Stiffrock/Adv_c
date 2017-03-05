@@ -34,6 +34,7 @@ String::String(const char* cstr)
 
 	}
 	sdata[length - 1] = '\0';
+	last = &sdata[length - 1];
 
 	Invariant();
 }
@@ -105,6 +106,7 @@ String& String::operator+=(const String& rhs)
 	Size += rhs.Size;
 	length = oldLength + addLength;
 	Invariant();
+	last = &sdata[length - 1];
 	return *this;
 }
 String String::operator+ (const String& rhs)
@@ -113,7 +115,7 @@ String String::operator+ (const String& rhs)
 
 	newString += *this;
 	newString += String(rhs.sdata);
-
+	last = &sdata[length - 1];
 	return newString;
 }
 
@@ -123,7 +125,7 @@ String String::operator+ (const char* cstr)
 
 	newString += *this;
 	newString += String(cstr);
-
+	last = &sdata[length - 1];
 	return newString;
 }
 
@@ -142,6 +144,7 @@ String& String::operator=(const String& rhs)
 	sdata = ptr;
 
 	Invariant();
+	last = &sdata[length - 1];
 	return *this;
 }
 
@@ -182,6 +185,7 @@ void String::resize(size_t n)
 		int diff = newLength - length;
 		reserve(diff);
 	}
+	last = &sdata[length - 1];
 }
 
 void String::shrink_to_fit()
@@ -210,6 +214,8 @@ void String::shrink_to_fit()
 	ptr[minLength - 1] = '\0';
 	length = minLength;
 	sdata = ptr;
+	last = &sdata[length - 1];
+
 	Invariant();
 }
 
@@ -228,6 +234,8 @@ void String::push_back(char c)
 	Size++;
 	sdata[currentSize] = '\0';
 	Invariant();
+	last = &sdata[length - 1];
+
 
 }
 
@@ -250,6 +258,8 @@ void String::reserve(size_t n) //finns i STL, basic_string
 	delete[] sdata; // ta bort den gammla datan
 	sdata = ptr;
 	Invariant();
+	last = &sdata[length - 1];
+
 
 }
 
