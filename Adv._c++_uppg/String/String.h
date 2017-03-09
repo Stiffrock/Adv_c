@@ -13,7 +13,6 @@ private:
 	int length;
 	int Size;
 
-
 public:
 	String();
 	String(const String& rhs);
@@ -22,32 +21,37 @@ public:
 
 	typedef StringItr iterator;
 	typedef ReverseStringItr reverse_iterator;
+	typedef char value_type;
+	typedef char& reference;
+	typedef char* pointer;
+
 
 	bool Invariant()
 	{
 		return sdata == nullptr || *sdata == *sdata;
 	}
 
-	char& at(size_t i); //indexerar med range check (bounds checking?)
-	const char* data() const; //gives a reference of the internal array holding string, it must also benull character terminated. (meaning that there must be an extra null character last in your array
+	char& at(size_t i);
+	const char* data() const;
 
-	iterator begin() { return iterator(sdata); }
-	iterator end() { return iterator(last); }
+	iterator begin() { return sdata; }
+	iterator end() { return sdata + Size; }
 
-	//reverse_iterator rbegin() { return reverse_iterator(last); }
-	//char* rend() { return sdata; }
+	///Enligt cpp reference står det att dom ska peka på ligga en före men peka på den efter
+	///Hur gör jag detta utan att ändra i själva containern då jag har /0 i slutet
+	///Jag tänker mig att det är den som förstör för mig och att jag hade behövt flytta den i rbegin
 
-	reverse_iterator rbegin() { return reverse_iterator(--last); }
-	reverse_iterator rend() {return reverse_iterator(--sdata); }
+	reverse_iterator rbegin() { return sdata - 1 + Size; }
+	reverse_iterator rend() { return sdata - 1; }
 
 
 
-	int size() const; //finns i STL, basic_string
-	void reserve(size_t); //finns i STL, basic_string
-	int capacity() const; //finns i STL, basic_string
-	void shrink_to_fit(); //till skillnad från std så krävs här att utrymmet krymps maximalt så String tar så lite utrymme som möjligt
-	void push_back(char c); // lagger till tecken sist
-	void resize(size_t n); // Ändrar antalet tacken till n, om n > length så fylls det på med char()
+	int size() const; 
+	void reserve(size_t);
+	int capacity() const;
+	void shrink_to_fit();
+	void push_back(char c);
+	void resize(size_t n);
 
 	friend std::ostream& operator<<(std::ostream& cout, const String& rhs)
 	{
@@ -67,7 +71,7 @@ public:
 		}
 	};
 
-	String& operator+=(const String& rhs); // tolkas som konkatenering
+	String& operator+=(const String& rhs);
 	String operator+ (const char* cstr);
 	String& operator=(const String& rhs);
 	String operator+ (const String& rhs);

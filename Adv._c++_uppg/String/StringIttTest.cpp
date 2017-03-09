@@ -28,9 +28,9 @@ void TestIttInAlg() {
     auto b = std::begin(v);
     auto e = std::end(v);
 
-    //std::random_shuffle(b, e);
+    std::random_shuffle(b, e);
 
-    //cout << v << endl;
+    cout << v << endl;
     std::stable_sort(b, e);
 
     cout << v << endl;
@@ -39,21 +39,23 @@ void TestIttInAlg() {
 
 void TestRevIttInAlg() {
 
-    //static const int N = 26;
-    //String v;
-    //v.reserve(N);
-    //for (int i = 0; i < N; ++i) {
-    //    v.push_back('a' + i);
-    //}
-    //auto b = std::rbegin(v);
-    //auto e = std::rend(v);
+    static const int N = 26;
+    String v;
+    v.reserve(N);
+    for (int i = 0; i < N; ++i) {
+        v.push_back('a' + i);
+    }
+    auto b = std::rbegin(v);
+    auto e = std::rend(v);
 
-    //std::random_shuffle(b, e);
+   
+		std::random_shuffle(b, e);
 
-    //cout << v << endl;
-    //std::stable_sort(b, e);
+    cout << v << endl;
+    std::stable_sort(b, e);
 
-    //cout << v << endl;
+		cout << v << endl;
+		cout << v << endl;
 
 }
 
@@ -71,7 +73,7 @@ void TestIttPart() {
     ++it;
     assert(*++it == 'b');
     assert(*(it + 1) == 'a');
-  //  assert(it[2] == 'r');
+    assert(it[2] == 'r');
 }
 
 void TestIttPartR() {
@@ -87,7 +89,7 @@ void TestIttPartR() {
     ++it;
     assert(*++it == 'b');
     assert(*(it + 1) == 'a');
-    //assert(it[2] == 'r');
+    assert(it[2] == 'r');
 }
 
 #ifdef VG
@@ -129,7 +131,6 @@ void TestFörGodkäntItt() {
     String::reverse_iterator rStr;
 
     //-	funktionerna begin, end, cbegin, cend, rbegin, rend, crbegin och crend.
-
 
     TestIttPart();
     TestIttPartR();

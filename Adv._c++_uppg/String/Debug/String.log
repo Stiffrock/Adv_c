@@ -1,16 +1,15 @@
 ﻿  StringTest.cpp
-c:\users\christofer\documents\github\adv_c\adv._c++_uppg\string\string.h(54): warning C4018: '<': signed/unsigned mismatch
-c:\users\christofer\documents\github\adv_c\adv._c++_uppg\string\string.h(66): warning C4800: 'char *': forcing value to bool 'true' or 'false' (performance warning)
+c:\users\christofer\documents\github\adv_c\adv._c++_uppg\string\string.h(58): warning C4018: '<': signed/unsigned mismatch
+c:\users\christofer\documents\github\adv_c\adv._c++_uppg\string\string.h(70): warning C4800: 'char *': forcing value to bool 'true' or 'false' (performance warning)
   StringIttTest.cpp
-c:\users\christofer\documents\github\adv_c\adv._c++_uppg\string\string.h(54): warning C4018: '<': signed/unsigned mismatch
-c:\users\christofer\documents\github\adv_c\adv._c++_uppg\string\string.h(66): warning C4800: 'char *': forcing value to bool 'true' or 'false' (performance warning)
-  StringItr.cpp
+c:\users\christofer\documents\github\adv_c\adv._c++_uppg\string\string.h(58): warning C4018: '<': signed/unsigned mismatch
+c:\users\christofer\documents\github\adv_c\adv._c++_uppg\string\string.h(70): warning C4800: 'char *': forcing value to bool 'true' or 'false' (performance warning)
   String.cpp
-c:\users\christofer\documents\github\adv_c\adv._c++_uppg\string\string.h(54): warning C4018: '<': signed/unsigned mismatch
-c:\users\christofer\documents\github\adv_c\adv._c++_uppg\string\string.h(66): warning C4800: 'char *': forcing value to bool 'true' or 'false' (performance warning)
+c:\users\christofer\documents\github\adv_c\adv._c++_uppg\string\string.h(58): warning C4018: '<': signed/unsigned mismatch
+c:\users\christofer\documents\github\adv_c\adv._c++_uppg\string\string.h(70): warning C4800: 'char *': forcing value to bool 'true' or 'false' (performance warning)
   Main .cpp
-c:\users\christofer\documents\github\adv_c\adv._c++_uppg\string\string.h(54): warning C4018: '<': signed/unsigned mismatch
-c:\users\christofer\documents\github\adv_c\adv._c++_uppg\string\string.h(66): warning C4800: 'char *': forcing value to bool 'true' or 'false' (performance warning)
+c:\users\christofer\documents\github\adv_c\adv._c++_uppg\string\string.h(58): warning C4018: '<': signed/unsigned mismatch
+c:\users\christofer\documents\github\adv_c\adv._c++_uppg\string\string.h(70): warning C4800: 'char *': forcing value to bool 'true' or 'false' (performance warning)
   Generating Code...
   String.vcxproj -> C:\Users\Christofer\Documents\GitHub\Adv_c\Adv._c++_uppg\Debug\String.exe
   String.vcxproj -> C:\Users\Christofer\Documents\GitHub\Adv_c\Adv._c++_uppg\Debug\String.pdb (Partial PDB)
