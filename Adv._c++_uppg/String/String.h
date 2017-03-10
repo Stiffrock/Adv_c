@@ -41,8 +41,10 @@ public:
 	///Hur gör jag detta utan att ändra i själva containern då jag har /0 i slutet
 	///Jag tänker mig att det är den som förstör för mig och att jag hade behövt flytta den i rbegin
 
-	reverse_iterator rbegin() { return sdata - 1 + Size; }
-	reverse_iterator rend() { return sdata - 1; }
+	reverse_iterator rbegin() {
+	 return sdata - 1 + Size; }
+	reverse_iterator rend() { 
+	return sdata - 1; }
 
 
 
