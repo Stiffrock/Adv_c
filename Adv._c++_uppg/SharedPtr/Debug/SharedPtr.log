@@ -1,0 +1,5 @@
+﻿  Main.cpp
+c:\users\christofer\documents\github\adv_c\adv._c++_uppg\sharedptr\sharedptr.hpp(68): error C2440: 'return': cannot convert from 'SharedPtr<C> *const ' to 'C &'
+  c:\users\christofer\documents\github\adv_c\adv._c++_uppg\sharedptr\sharedptr.hpp(64): note: while compiling class template member function 'C &SharedPtr<C>::operator =(const SharedPtr<C>)'
+  c:\users\christofer\documents\github\adv_c\adv._c++_uppg\sharedptr\main.cpp(54): note: see reference to function template instantiation 'C &SharedPtr<C>::operator =(const SharedPtr<C>)' being compiled
+  c:\users\christofer\documents\github\adv_c\adv._c++_uppg\sharedptr\main.cpp(35): note: see reference to class template instantiation 'SharedPtr<C>' being compiled

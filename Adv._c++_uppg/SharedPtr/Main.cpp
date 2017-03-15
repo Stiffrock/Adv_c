@@ -5,8 +5,8 @@
 #define new DBG_NEW
 #endif
 #endif  // _DEBUG
-//#include <stdlib.h>
-//#include <crtdbg.h>
+#include <stdlib.h>
+#include <crtdbg.h>
 
 #include <cassert>
 

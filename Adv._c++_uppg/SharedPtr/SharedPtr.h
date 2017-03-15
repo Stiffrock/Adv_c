@@ -4,29 +4,35 @@ template <class T>
 class SharedPtr
 {
 	T* ptr;
+	int *count;
 public:
 	SharedPtr();
-	SharedPtr(nullptr nPtr) {};
-	SharedPtr(T* ptr) {};
-	SharedPtr(SharedPtr& sPtr) {};
-	SharedPtr(SharedPtr&& sPtr) {};
+	SharedPtr(std::nullptr_t nullp);
+	SharedPtr(T* ptr);
+
+	//Move
+	SharedPtr(SharedPtr&&);
 
 	//Tilldelning
-	SharedPtr(SharedPtr& sPtr) {};
+	SharedPtr(const SharedPtr&);
+	SharedPtr& operator=(SharedPtr &&);
 
-	operator==(nullptr nPtr) {};
-	operator==(SharedPtr sPtr) {};
-	operator<(nullptr nPtr) {};
-	operator<(SharedPtr sPtr) {};
+	bool operator==(std::nullptr_t nullp) { return ptr == nullp; };
+	bool operator==(SharedPtr<T> sPtr) { return ptr == sPtr.ptr; };
+	bool operator<(std::nullptr_t nullp ) {return ptr < nullp};
+	bool operator<(SharedPtr<T> sPtr) { return ptr < sPtr.ptr; };
 
-	operator*() {};
-	operator->() {};
-	operator bool() {};
+	T& operator*() { return *ptr; };
+	T* operator->() { return ptr; };
+	operator bool() { if (ptr != nullptr) { return true; } else return false; };
+	T& operator=(const SharedPtr ptr);
+
 	
-	reset(T* = nullptr) {};
-	T* get() {};
-	void unique() {};
+	void reset(T* = nullptr) {};
+	T* get() { return ptr; };
+	bool unique() { if (*count > 1) { return true; } else return false; }; //checks if the managed oject is owned by others
 	
 	~SharedPtr();
 };
 
+#include "SharedPtr.hpp"
