@@ -21,7 +21,6 @@ public:
 
 	//Tilldelning
 	SharedPtr(const SharedPtr&);
-	SharedPtr& operator=(SharedPtr &&);
 
 	bool operator==(std::nullptr_t nullp) { return ptr == nullp; };
 	bool operator==(SharedPtr<T> sPtr) { return ptr == sPtr.ptr; };
@@ -36,10 +35,13 @@ public:
 	
 	void reset(T* nptr = nullptr) 
 	{
-		count = new int(1);
+		delete ptr;
+		delete count;
 		ptr = nptr;
-
+		count = nullptr;
 	};
+
+
 	T* get() { return ptr; };
 	bool unique() { if (*count <= 1) { return true; } else return false; }; //checks if the managed oject is owned by others
 	

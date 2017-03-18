@@ -1,8 +1,6 @@
 template <typename T>
 SharedPtr<T>::SharedPtr()
 {
-	//count = new int(1);
-
 	count = nullptr;
 	ptr = nullptr;
 	Invariant();
@@ -11,11 +9,9 @@ SharedPtr<T>::SharedPtr()
 template <typename T>
 SharedPtr<T>::SharedPtr(std::nullptr_t nullp)
 {
-	//count = new int(1);
 	count = nullptr;
 	ptr = nullptr;
 	Invariant();
-
 }
 
 template<typename T>
@@ -28,7 +24,6 @@ SharedPtr<T>::SharedPtr(T* p)
 
 	ptr = p;
 	Invariant();
-
 }
 
 template<typename T>
@@ -39,14 +34,14 @@ SharedPtr<T>::SharedPtr(SharedPtr<T> &&rhs)
 
 	rhs.ptr = nullptr;
 	rhs.count = nullptr;
-	Invariant();
 
+	Invariant();
 }
 
 template <typename T>
 SharedPtr<T>::SharedPtr(const SharedPtr<T> &rhs)
 {
-	ptr = rhs.ptr;
+	ptr = rhs.ptr; // tror jag måste förstöra ptr
 	count = rhs.count;
 
 	if (ptr != nullptr)
@@ -72,59 +67,27 @@ SharedPtr<T>::~SharedPtr()
 }
 
 template <typename T>
-SharedPtr<T> &SharedPtr<T>::operator=(SharedPtr<T> &&rhs)
-{	
-
-	if (ptr == sptr.ptr)
-		return *this;
-
-	if (ptr != nullptr)
-	{
-		ptr = sptr.ptr;
-		count = sptr.count;
-	}
-	if (sptr.ptr == nullptr)
-	{
-		ptr = sptr.ptr;
-		count = nullptr;
-	}
-	//ptr = rhs.ptr;
-	//count = rhs.count;
-
-	if (ptr != nullptr)
-		++*rhs.count;
-	Invariant();
-
-	return *this;
-}
-
-template <typename T>
-SharedPtr<T>& SharedPtr<T>::operator=(const SharedPtr& sptr) //Tilldelningsoperatorerna är fucked, måste ta hänsyn till att du kan göra tilldelning på ett redan existerande objekt. Då måste det objektet tas bort LUL.
+SharedPtr<T>& SharedPtr<T>::operator=(const SharedPtr& rhs) 
 {
 
-	if (ptr == sptr.ptr)
+	if (ptr == rhs.ptr)
 		return *this;
 
+
+	//om det redan finns något i ptr måste det raderas och ersättas 
 	if (ptr != nullptr)
 	{
-		ptr = sptr.ptr;
-		count = sptr.count;
-	}
-	if (sptr.ptr == nullptr)
-	{
-		ptr = sptr.ptr;
-		count = nullptr;
-	}
+		delete ptr;
+		--*count;
+
+		ptr = rhs.ptr;
+		count = rhs.count;
 		
+		if (ptr != nullptr)
+			++*count;
 
-
-	
-	
-
-	if (ptr != nullptr)
-		++*sptr.count;
-	Invariant();
-	return *this;
+		return *this;
+	}	
 }
 
 

@@ -33,6 +33,7 @@ void TestG() {
 
 
 	SharedPtr<C> sp11;
+	SharedPtr<C> test(new C(5));
 	assert(!sp11);
 	SharedPtr<C> p15(nullptr);
 	assert(!p15);
