@@ -1,2 +1,9 @@
-﻿  DLL.vcxproj -> C:\Users\Christofer\Documents\GitHub\Adv_c\Adv._c++_uppg\Debug\DLL.exe
-  DLL.vcxproj -> C:\Users\Christofer\Documents\GitHub\Adv_c\Adv._c++_uppg\Debug\DLL.pdb (Partial PDB)
+﻿Build started 2017-03-17 11:48:24.
+     1>Project "C:\Users\chris_000\Documents\GitHub\Adv_c\Adv._c++_uppg\DLL\DLL.vcxproj" on node 4 (Build target(s)).
+     1>Link:
+         DLL.vcxproj -> C:\Users\chris_000\Documents\GitHub\Adv_c\Adv._c++_uppg\Debug\DLL.exe
+     1>Done Building Project "C:\Users\chris_000\Documents\GitHub\Adv_c\Adv._c++_uppg\DLL\DLL.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.65
