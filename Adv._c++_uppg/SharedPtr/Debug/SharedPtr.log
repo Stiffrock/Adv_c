@@ -1,4 +1,9 @@
-﻿  Main.cpp
-c:\users\christofer\documents\github\adv_c\adv._c++_uppg\sharedptr\sharedptr.hpp(91): warning C4715: 'SharedPtr<C>::operator=': not all control paths return a value
-  SharedPtr.vcxproj -> C:\Users\Christofer\Documents\GitHub\Adv_c\Adv._c++_uppg\Debug\SharedPtr.exe
-  SharedPtr.vcxproj -> C:\Users\Christofer\Documents\GitHub\Adv_c\Adv._c++_uppg\Debug\SharedPtr.pdb (Partial PDB)
+﻿Build started 2017-03-24 10:22:56.
+     1>Project "C:\Users\chris_000\Documents\GitHub\Adv_c\Adv._c++_uppg\SharedPtr\SharedPtr.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         SharedPtr.vcxproj -> C:\Users\chris_000\Documents\GitHub\Adv_c\Adv._c++_uppg\Debug\SharedPtr.exe
+     1>Done Building Project "C:\Users\chris_000\Documents\GitHub\Adv_c\Adv._c++_uppg\SharedPtr\SharedPtr.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.17

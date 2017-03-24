@@ -1,3 +1,9 @@
-﻿  Source.cpp
-  Algoritmer.vcxproj -> C:\Users\Christofer\Documents\GitHub\Adv_c\Adv._c++_uppg\Debug\Algoritmer.exe
-  Algoritmer.vcxproj -> C:\Users\Christofer\Documents\GitHub\Adv_c\Adv._c++_uppg\Debug\Algoritmer.pdb (Full PDB)
+﻿Build started 2017-03-24 10:22:56.
+     1>Project "C:\Users\chris_000\Documents\GitHub\Adv_c\Adv._c++_uppg\Algoritmer\Algoritmer.vcxproj" on node 5 (Build target(s)).
+     1>Link:
+         Algoritmer.vcxproj -> C:\Users\chris_000\Documents\GitHub\Adv_c\Adv._c++_uppg\Debug\Algoritmer.exe
+     1>Done Building Project "C:\Users\chris_000\Documents\GitHub\Adv_c\Adv._c++_uppg\Algoritmer\Algoritmer.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.10

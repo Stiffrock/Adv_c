@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Replace", "Replace\Replace.vcxproj", "{6232086E-94D9-4B23-8B6C-BBAD3B446CF2}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Algoritmer", "Algoritmer\Algoritmer.vcxproj", "{0F6003BC-D5D5-4746-949B-BF29CFE62DB9}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SharedPtr", "SharedPtr\SharedPtr.vcxproj", "{F989005A-88BE-4B67-A13E-0BDC2F3C9D87}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RationalNumbers", "RationalNumbers\RationalNumbers.vcxproj", "{44C3917D-D2BE-41AD-902C-445CA88A7C27}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +63,14 @@ Global
 		{F989005A-88BE-4B67-A13E-0BDC2F3C9D87}.Release|x64.Build.0 = Release|x64
 		{F989005A-88BE-4B67-A13E-0BDC2F3C9D87}.Release|x86.ActiveCfg = Release|Win32
 		{F989005A-88BE-4B67-A13E-0BDC2F3C9D87}.Release|x86.Build.0 = Release|Win32
+		{44C3917D-D2BE-41AD-902C-445CA88A7C27}.Debug|x64.ActiveCfg = Debug|x64
+		{44C3917D-D2BE-41AD-902C-445CA88A7C27}.Debug|x64.Build.0 = Debug|x64
+		{44C3917D-D2BE-41AD-902C-445CA88A7C27}.Debug|x86.ActiveCfg = Debug|Win32
+		{44C3917D-D2BE-41AD-902C-445CA88A7C27}.Debug|x86.Build.0 = Debug|Win32
+		{44C3917D-D2BE-41AD-902C-445CA88A7C27}.Release|x64.ActiveCfg = Release|x64
+		{44C3917D-D2BE-41AD-902C-445CA88A7C27}.Release|x64.Build.0 = Release|x64
+		{44C3917D-D2BE-41AD-902C-445CA88A7C27}.Release|x86.ActiveCfg = Release|Win32
+		{44C3917D-D2BE-41AD-902C-445CA88A7C27}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
